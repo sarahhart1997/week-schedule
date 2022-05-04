@@ -4,6 +4,12 @@ const currentDate = moment().format("dddd, MMM Do YYYY");
 // current time to current date
 currentTime.text(moment().format("dddd, MMMM Do"));
 
+// load events 
+
+// create cards container 
+
+// loops through time to create card 
+
 //color code based on if it is in the past, present or future
 // if (currentHour < 9) {
 //     .addClass("future");
@@ -13,7 +19,7 @@ currentTime.text(moment().format("dddd, MMMM Do"));
 //     .addClass("present");
 // }
 
-var colorCards = function (timeAndday) {
+var colorCards = function (dateAndtime) {
     // gets current time
     var currentHour = moment().format();
     
@@ -29,8 +35,7 @@ var colorCards = function (timeAndday) {
         $("#input"+ index).addClass("present");
     }
 }
-
-// do something like above until 6pm. 
-
 //save events to local storage
+
+
 
