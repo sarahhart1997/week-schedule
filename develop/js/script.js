@@ -7,8 +7,15 @@ currentTime.text(moment().format("dddd, MMMM Do"));
 // load events 
 
 // create cards container 
-
+var createBlock =
 // loops through time to create card 
+var mainStart = function() {
+    for(let i=9; i < hours; i++) {
+        createBlock(formatTime(i), i);
+        colorCards(formatTime(i), i);
+        loadEvents(formatTime(i), i);
+    }
+}
 
 //color code based on if it is in the past, present or future
 // if (currentHour < 9) {
@@ -38,4 +45,4 @@ var colorCards = function (dateAndtime) {
 //save events to local storage
 
 
-
+mainStart();
