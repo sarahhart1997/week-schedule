@@ -43,6 +43,15 @@ var colorCards = function (dateAndtime) {
     }
 }
 //save events to local storage
+$(document).ready(function () {
+    $(".saveBtn").on("click", function () {
+        // get description and time
+        var text = $(this).siblings(".description").val();
+        var time = $(this).parent().attr("id");
 
+        // put into local storage
+        localStorage.setItem(time, text);
+    });
+})
 
 mainStart();
