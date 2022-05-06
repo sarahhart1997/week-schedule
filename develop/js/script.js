@@ -19,12 +19,9 @@ $("#block-6p .description").val(localStorage.getItem("block-6p"));
 $("#block-7p .description").val(localStorage.getItem("block-7p"));
 $("#block-8p .description").val(localStorage.getItem("block-8p"));
 
-// create cards container 
-var createBlock =
 // loops through time to create card 
 var mainStart = function() {
     for(let i=9; i < hours; i++) {
-        createBlock(formatTime(i), i);
         colorCards(formatTime(i), i);
         loadEvents(formatTime(i), i);
     }
