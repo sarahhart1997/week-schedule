@@ -8,6 +8,7 @@ const hour = document.getElementsByClassName("hour");
 // loops through time to create card 
 var mainStart = function() {
     for(let i=0; i < blocks.length; i++) {
+        loadEvents();
         colorCards();
     }
 }
