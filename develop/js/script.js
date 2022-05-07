@@ -2,9 +2,11 @@
 var today = moment().format("dddd, MMM Do YYYY");
 document.getElementById("currentDay").textContent = today;
 
+const blocks = document.getElementsByClassName("time-block");
+
 // loops through time to create card 
 var mainStart = function() {
-    for(let i=9; i < hours; i++) {
+    for(let i=0; i < blocks.length; i++) {
         colorCards(formatTime(i), i);
     }
 }
