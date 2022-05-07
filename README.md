@@ -11,3 +11,7 @@ BUILT WITH
     * CSS
     * JavaScript
 
+DEPLOYED APPLICATION
+---------------------
+
+https://sarahhart1997.github.io/week-schedule-a5/ 
