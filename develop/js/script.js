@@ -20,7 +20,11 @@ var colorCards = function () {
     var currentHour = moment().format();
 
     // establishes time block time
-    var blockTime = parseInt(hour, 10)
+    var blockTime = parseInt(hour, 10);
+    let timeValue = blockTime;
+
+    // remove any old classes from element
+    $(blocks[i]).removeClass(".present .past .future");
 
     //compares hours 
     if (moment(blockTime).isBefore(currentHour)){
@@ -29,11 +33,15 @@ var colorCards = function () {
     } else if (moment(blockTime).isAfter(currentHour)){
         // add class for past
         blocks.addClass("past");
-    } else { (moment(blockTime) === currentHour)
+    } else {
         // add present class
         blocks.addClass("present");
     }
 }
+
+// loop through color cards every 2 minutes
+setInterval(colorCards(), (1000 * 60) * 2);
+
 //save button event listener
 $(document).ready(function () {
     $(".saveBtn").on("click", function () {
