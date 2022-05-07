@@ -31,7 +31,7 @@ var colorCards = function () {
         blocks.addClass("present");
     }
 }
-//save events to local storage
+//save button event listener
 $(document).ready(function () {
     $(".saveBtn").on("click", function () {
         // get description and time
