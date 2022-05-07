@@ -3,6 +3,7 @@ var today = moment().format("dddd, MMM Do YYYY");
 document.getElementById("currentDay").textContent = today;
 
 const blocks = document.getElementsByClassName("time-block");
+const hour = document.getElementsByClassName("hour");
 
 // loops through time to create card 
 var mainStart = function() {
@@ -12,13 +13,6 @@ var mainStart = function() {
 }
 
 //color code based on if it is in the past, present or future
-// if (currentHour < 9) {
-//     .addClass("future");
-// } else if (currentHour > 9) {
-//     .addClass("past");
-// } else if (currentHour = 9) {
-//     .addClass("present");
-// }
 
 var colorCards = function (dateAndtime) {
     // gets current time
@@ -26,15 +20,15 @@ var colorCards = function (dateAndtime) {
     console.log(currentHour)
 
     //compares hours 
-    if (moment(currentHour).isBefore(currentDate)){
+    if (moment(hour).isBefore(currentHour)){
         // add class for future
-        $("#input"+ index).addClass("future");
-    } else if (moment(currentHour).isAfter(currentDate)){
+        blocks.addClass("future");
+    } else if (moment(hour).isAfter(currentHour)){
         // add class for past
-        $("#input"+ index).addClass("past");
-    } else {
+        blocks.addClass("past");
+    } else { (moment(hour)===currentHour)
         // add present class
-        $("#input"+ index).addClass("present");
+        blocks.addClass("present");
     }
 }
 //save events to local storage
