@@ -2,7 +2,7 @@
 var today = moment().format("dddd, MMM Do YYYY");
 document.getElementById("currentDay").textContent = today;
 
-const blocks = document.getElementsByClassName("time-block");
+const blocks = document.getElementsByClassName("description");
 const hour = document.getElementsByClassName("hour");
 
 // loops through time to create card 
@@ -17,16 +17,18 @@ var mainStart = function() {
 var colorCards = function () {
     // gets current time
     var currentHour = moment().format();
-    console.log(currentHour)
+
+    // establishes time block time
+    var blockTime = parseInt(hour, 10)
 
     //compares hours 
-    if (moment(hour).isBefore(currentHour)){
+    if (moment(blockTime).isBefore(currentHour)){
         // add class for future
         blocks.addClass("future");
-    } else if (moment(hour).isAfter(currentHour)){
+    } else if (moment(blockTime).isAfter(currentHour)){
         // add class for past
         blocks.addClass("past");
-    } else { (moment(hour) === currentHour)
+    } else { (moment(blockTime) === currentHour)
         // add present class
         blocks.addClass("present");
     }
