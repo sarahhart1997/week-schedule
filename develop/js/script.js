@@ -8,13 +8,13 @@ const hour = document.getElementsByClassName("hour");
 // loops through time to create card 
 var mainStart = function() {
     for(let i=0; i < blocks.length; i++) {
-        colorCards(formatTime(i), i);
+        colorCards();
     }
 }
 
 //color code based on if it is in the past, present or future
 
-var colorCards = function (dateAndtime) {
+var colorCards = function () {
     // gets current time
     var currentHour = moment().format();
     console.log(currentHour)
@@ -26,7 +26,7 @@ var colorCards = function (dateAndtime) {
     } else if (moment(hour).isAfter(currentHour)){
         // add class for past
         blocks.addClass("past");
-    } else { (moment(hour)===currentHour)
+    } else { (moment(hour) === currentHour)
         // add present class
         blocks.addClass("present");
     }
